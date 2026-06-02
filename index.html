@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aline Zayat — Economist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-light: #4a4a46;
+    --ink-faint: #8a8a84;
+    --rule: #d6d3c8;
+    --bg: #faf9f6;
+    --bg-warm: #f2efe8;
+    --accent: #6b4c3b;
+    --accent-light: #c9a98a;
+    --serif: 'Playfair Display', Georgia, serif;
+    --body: 'Source Serif 4', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--bg);
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+  }
+
+  nav .logo {
+    font-family: var(--serif);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--accent); }
+
+  /* SECTIONS */
+  section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  section:first-of-type { padding-top: 120px; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: var(--ink-light);
+    margin-top: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 4rem 0 0;
+  }
+
+  /* HERO */
+  #about .intro-text {
+    font-size: 1.08rem;
+    color: var(--ink-light);
+    max-width: 600px;
+    margin-top: 2rem;
+    line-height: 1.8;
+  }
+
+  .fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+
+  .field-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 0.4rem 1rem;
+    color: var(--ink-light);
+    background: transparent;
+  }
+
+  /* PUBLICATIONS */
+  .pub-list { list-style: none; }
+
+  .pub-item {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pub-item:first-child { border-top: 1px solid var(--rule); }
+
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .pub-title:hover { color: var(--accent); }
+
+  .pub-meta {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-top: 0.25rem;
+  }
+
+  .pub-journal {
+    font-style: italic;
+    color: var(--ink-light);
+  }
+
+  .pub-status {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent-light);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+  }
+
+  /* CONTACT */
+  #contact .contact-line {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--ink-light);
+  }
+
+  #contact a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-light);
+    transition: border-color 0.2s;
+  }
+
+  #contact a:hover { border-color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+
+  /* DECORATION */
+  .hero-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 1.8rem 0;
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 1.2rem; }
+    nav ul { gap: 1.2rem; }
+    section { padding: 4rem 1.2rem; }
+    section:first-of-type { padding-top: 90px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about" class="logo">Aline Zayat</a>
+  <ul>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">PhD Candidate in Economics</p>
+  <h1>Aline <em>Zayat</em></h1>
+  <p class="subtitle">University of Ottawa</p>
+  <div class="hero-rule"></div>
+  <p class="intro-text">
+    I am a PhD candidate in Economics at the University of Ottawa. My research lies at the intersection of applied microeconomics, health economics, and labour economics, with a particular focus on gender equity, mental health, and policy evaluation.
+  </p>
+  <div class="fields">
+    <span class="field-tag">Applied Microeconomics</span>
+    <span class="field-tag">Health Economics</span>
+    <span class="field-tag">Labour Economics</span>
+    <span class="field-tag">Gender Equity</span>
+    <span class="field-tag">Mental Health</span>
+    <span class="field-tag">Policy Evaluation</span>
+  </div>
+</section>
+
+<hr class="divider" style="max-width:780px; margin: 0 auto;">
+
+<!-- RESEARCH -->
+<section id="research">
+  <p class="section-label">Research</p>
+  <h2>Publications &amp; Working Papers</h2>
+
+  <ul class="pub-list">
+
+    <!-- Publication 1 -->
+    <li class="pub-item">
+      <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S0167268125000769" target="_blank" rel="noopener">
+        Reactance, rationalization, and women's rights for safe abortion: Evidence from Roe v. Wade's overturn
+      </a>
+      <div class="pub-meta">
+        with Ghina Abdul Baki, Louis-Philippe Béland, and Myra Yazbeck
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Journal of Economic Behavior &amp; Organization</span>, 2025
+      </div>
+    </li>
+
+    <!-- Publication 2 -->
+    <li class="pub-item">
+      <a class="pub-title" href="https://www.nature.com/articles/s41586-026-10251-x" target="_blank" rel="noopener">
+        Reproducibility and robustness of economics and political science research
+      </a>
+      <div class="pub-meta">
+        with Brodeur et al.
+      </div>
+      <div class="pub-meta">
+        <span class="pub-journal">Nature</span>, 2026
+      </div>
+    </li>
+
+    <!-- WIP 1 -->
+    <li class="pub-item">
+      <span class="pub-title" style="cursor:default;">
+        When one earns more, do both feel better? Income shocks and spousal well-being
+        <span class="pub-status">Work in progress</span>
+      </span>
+      <div class="pub-meta">
+        with Louis-Philippe Béland and Myra Yazbeck
+      </div>
+      <div class="pub-meta" style="margin-top:0.3rem; font-size:0.82rem; color:var(--ink-faint);">
+        Draft available upon request
+      </div>
+    </li>
+
+    <!-- WIP 2 -->
+    <li class="pub-item">
+      <span class="pub-title" style="cursor:default;">
+        Media, beauty, and health
+        <span class="pub-status">Work in progress</span>
+      </span>
+      <div class="pub-meta">
+        with Louis-Philippe Béland and Myra Yazbeck
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<hr class="divider" style="max-width:780px; margin: 0 auto;">
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2>Get in touch</h2>
+  <p class="contact-line">
+    I welcome inquiries about my research, potential collaborations, and draft requests.
+  </p>
+  <p class="contact-line">
+    <strong>Email:</strong> <a href="mailto:Azaya096@uottawa.ca">Azaya096@uottawa.ca</a>
+  </p>
+  <p class="contact-line">
+    University of Ottawa · Department of Economics
+  </p>
+</section>
+
+<footer>
+  &copy; 2026 Aline Zayat
+</footer>
+
+</body>
+</html>
