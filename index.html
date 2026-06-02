@@ -60,12 +60,12 @@
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   nav ul a {
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-light);
@@ -76,12 +76,12 @@
 
   /* SECTIONS */
   section {
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 6rem 2rem;
   }
 
-  section:first-of-type { padding-top: 120px; }
+  section:first-of-type { padding-top: 100px; }
 
   .section-label {
     font-size: 0.7rem;
@@ -94,17 +94,14 @@
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: 400;
     line-height: 1.12;
     color: var(--ink);
     margin-bottom: 0.3rem;
   }
 
-  h1 em {
-    font-style: normal;
-    color: var(--ink);
-  }
+  h1 em { font-style: normal; color: var(--ink); }
 
   h2 {
     font-family: var(--serif);
@@ -114,44 +111,92 @@
     color: var(--ink);
   }
 
+  .divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* HERO TWO-COLUMN */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: grayscale(8%);
+  }
+
+  .hero-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 1.4rem 0;
+  }
+
   .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--ink-light);
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     font-weight: 300;
     letter-spacing: 0.02em;
   }
 
-  .divider {
-    border: none;
-    border-top: 1px solid var(--rule);
-    margin: 4rem 0 0;
-  }
-
-  /* HERO */
-  #about .intro-text {
-    font-size: 1.08rem;
+  .intro-text {
+    font-size: 1rem;
     color: var(--ink-light);
-    max-width: 600px;
-    margin-top: 2rem;
     line-height: 1.8;
+    margin-bottom: 1.5rem;
   }
 
   .fields {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 2rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .field-tag {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border: 1px solid var(--rule);
-    padding: 0.4rem 1rem;
+    padding: 0.35rem 0.85rem;
     color: var(--ink-light);
     background: transparent;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .contact-links a {
+    font-size: 0.88rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-light);
+    display: inline-block;
+    width: fit-content;
+    transition: border-color 0.2s;
+  }
+
+  .contact-links a:hover { border-color: var(--accent); }
+
+  .contact-links .link-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.1rem;
   }
 
   /* PUBLICATIONS */
@@ -166,7 +211,7 @@
 
   .pub-title {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 400;
     line-height: 1.4;
     color: var(--ink);
@@ -184,10 +229,7 @@
     margin-top: 0.25rem;
   }
 
-  .pub-journal {
-    font-style: italic;
-    color: var(--ink-light);
-  }
+  .pub-journal { font-style: italic; color: var(--ink-light); }
 
   .pub-status {
     display: inline-block;
@@ -201,7 +243,73 @@
     vertical-align: middle;
   }
 
-  /* CONTACT */
+  /* EMPLOYMENT & EDUCATION */
+  .entry-list { list-style: none; }
+
+  .entry-item {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .entry-item:first-child { border-top: 1px solid var(--rule); }
+
+  .entry-org {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .entry-role {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-bottom: 0.2rem;
+  }
+
+  .entry-detail {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-top: 0.15rem;
+  }
+
+  .entry-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .entry-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--bg-warm);
+    border: 1px solid var(--rule);
+    color: var(--ink-faint);
+    padding: 0.15rem 0.55rem;
+    margin-top: 0.3rem;
+  }
+
+  /* CV */
+  .cv-btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.7rem 1.8rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .cv-btn:hover { background: var(--accent); color: #fff; }
+
+  /* CONTACT SECTION */
   #contact .contact-line {
     margin-top: 1.5rem;
     font-size: 1rem;
@@ -227,19 +335,14 @@
     letter-spacing: 0.05em;
   }
 
-  /* DECORATION */
-  .hero-rule {
-    width: 48px;
-    height: 2px;
-    background: var(--accent);
-    margin: 1.8rem 0;
-  }
-
-  @media (max-width: 640px) {
-    nav { padding: 0 1.2rem; }
-    nav ul { gap: 1.2rem; }
+  @media (max-width: 660px) {
+    nav { padding: 0 1rem; }
+    nav ul { gap: 0.8rem; }
+    nav ul a { font-size: 0.62rem; }
     section { padding: 4rem 1.2rem; }
-    section:first-of-type { padding-top: 90px; }
+    section:first-of-type { padding-top: 85px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-photo { aspect-ratio: 4/3; order: -1; }
   }
 </style>
 </head>
@@ -249,30 +352,54 @@
   <a href="#about" class="logo">Aline Zayat</a>
   <ul>
     <li><a href="#research">Research</a></li>
+    <li><a href="#employment">Employment</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#cv">CV</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- ABOUT -->
 <section id="about">
-  <p class="section-label">PhD Candidate in Economics</p>
-  <h1>Aline <em>Zayat</em></h1>
-  <p class="subtitle">University of Ottawa</p>
-  <div class="hero-rule"></div>
-  <p class="intro-text">
-    I am a PhD candidate in Economics at the University of Ottawa. My research lies at the intersection of applied microeconomics, health economics, and labour economics, with a particular focus on gender equity, mental health, and policy evaluation.
-  </p>
-  <div class="fields">
-    <span class="field-tag">Applied Microeconomics</span>
-    <span class="field-tag">Health Economics</span>
-    <span class="field-tag">Labour Economics</span>
-    <span class="field-tag">Gender Equity</span>
-    <span class="field-tag">Mental Health</span>
-    <span class="field-tag">Policy Evaluation</span>
+  <div class="hero-grid">
+    <div>
+      <p class="section-label">PhD Candidate in Economics</p>
+      <h1>Aline <em>Zayat</em></h1>
+      <p class="subtitle">University of Ottawa</p>
+      <div class="hero-rule"></div>
+      <p class="intro-text">
+        I am a PhD candidate in Economics at the University of Ottawa. My research lies at the intersection of applied microeconomics, health economics, and labour economics, with a particular focus on gender equity, mental health, and policy evaluation.
+      </p>
+      <div class="fields">
+        <span class="field-tag">Applied Microeconomics</span>
+        <span class="field-tag">Health Economics</span>
+        <span class="field-tag">Labour Economics</span>
+        <span class="field-tag">Gender Equity</span>
+        <span class="field-tag">Mental Health</span>
+        <span class="field-tag">Policy Evaluation</span>
+      </div>
+      <div class="contact-links">
+        <div>
+          <div class="link-label">Email</div>
+          <a href="mailto:Azaya096@uottawa.ca">Azaya096@uottawa.ca</a>
+        </div>
+        <div>
+          <div class="link-label">ORCID</div>
+          <a href="https://orcid.org/0009-0007-3319-4971" target="_blank" rel="noopener">0009-0007-3319-4971</a>
+        </div>
+        <div>
+          <div class="link-label">Curriculum Vitae</div>
+          <a href="#cv">Download CV</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img class="hero-photo" src="photo.jpg" alt="Aline Zayat">
+    </div>
   </div>
 </section>
 
-<hr class="divider" style="max-width:780px; margin: 0 auto;">
+<hr class="divider" style="max-width:820px; margin: 0 auto;">
 
 <!-- RESEARCH -->
 <section id="research">
@@ -281,73 +408,139 @@
 
   <ul class="pub-list">
 
-    <!-- Publication 1 -->
     <li class="pub-item">
       <a class="pub-title" href="https://www.sciencedirect.com/science/article/pii/S0167268125000769" target="_blank" rel="noopener">
         Reactance, rationalization, and women's rights for safe abortion: Evidence from Roe v. Wade's overturn
       </a>
-      <div class="pub-meta">
-        with Ghina Abdul Baki, Louis-Philippe Béland, and Myra Yazbeck
-      </div>
-      <div class="pub-meta">
-        <span class="pub-journal">Journal of Economic Behavior &amp; Organization</span>, 2025
-      </div>
+      <div class="pub-meta">with Ghina Abdul Baki, Louis-Philippe Béland, and Myra Yazbeck</div>
+      <div class="pub-meta"><span class="pub-journal">Journal of Economic Behavior &amp; Organization</span>, 2025</div>
     </li>
 
-    <!-- Publication 2 -->
     <li class="pub-item">
       <a class="pub-title" href="https://www.nature.com/articles/s41586-026-10251-x" target="_blank" rel="noopener">
         Reproducibility and robustness of economics and political science research
       </a>
-      <div class="pub-meta">
-        with Brodeur et al.
-      </div>
-      <div class="pub-meta">
-        <span class="pub-journal">Nature</span>, 2026
-      </div>
+      <div class="pub-meta">with Brodeur et al.</div>
+      <div class="pub-meta"><span class="pub-journal">Nature</span>, 2026</div>
     </li>
 
-    <!-- WIP 1 -->
     <li class="pub-item">
       <span class="pub-title" style="cursor:default;">
         When one earns more, do both feel better? Income shocks and spousal well-being
         <span class="pub-status">Work in progress</span>
       </span>
-      <div class="pub-meta">
-        with Louis-Philippe Béland and Myra Yazbeck
-      </div>
-
+      <div class="pub-meta">with Louis-Philippe Béland and Myra Yazbeck</div>
     </li>
 
-    <!-- WIP 2 -->
     <li class="pub-item">
       <span class="pub-title" style="cursor:default;">
         Media, beauty, and health
         <span class="pub-status">Work in progress</span>
       </span>
-      <div class="pub-meta">
-        with Louis-Philippe Béland and Myra Yazbeck
-      </div>
+      <div class="pub-meta">with Louis-Philippe Béland and Myra Yazbeck</div>
     </li>
 
   </ul>
 </section>
 
-<hr class="divider" style="max-width:780px; margin: 0 auto;">
+<hr class="divider" style="max-width:820px; margin: 0 auto;">
+
+<!-- EMPLOYMENT -->
+<section id="employment">
+  <p class="section-label">Experience</p>
+  <h2>Employment</h2>
+
+  <ul class="entry-list">
+
+    <li class="entry-item">
+      <div class="entry-date">Sep 2021 – April 2026 · Ottawa, Canada</div>
+      <div class="entry-org">University of Ottawa</div>
+      <div class="entry-role">Teaching Assistant, Department of Economics</div>
+      <div class="entry-detail">Introduction to Macroeconomics · Introduction to Microeconomics · Undergraduate and Graduate Health Economics · PhD Microeconomic Theory II · Probability and Statistics for Economists</div>
+    </li>
+
+    <li class="entry-item">
+      <div class="entry-date">Jun 2022 – Present · Ottawa, Canada</div>
+      <div class="entry-org">University of Ottawa &amp; Carleton University</div>
+      <div class="entry-role">Research Assistant, Department of Economics</div>
+    </li>
+
+    <li class="entry-item">
+      <div class="entry-date">Feb 2020 – July 2021 · Beirut, Lebanon</div>
+      <div class="entry-org">United Nations — ESCWA</div>
+      <div class="entry-role">Consultant, Shared Economic Prosperity Cluster</div>
+      <div class="entry-detail">Economic &amp; Social Commission for Western Asia</div>
+    </li>
+
+    <li class="entry-item">
+      <div class="entry-date">Jan 2020 – May 2020 · Beirut, Lebanon</div>
+      <div class="entry-org">American University of Beirut</div>
+      <div class="entry-role">Part-time Instructor, Department of Economics</div>
+      <div class="entry-detail">Elementary Macroeconomics</div>
+    </li>
+
+  </ul>
+</section>
+
+<hr class="divider" style="max-width:820px; margin: 0 auto;">
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Academic Background</p>
+  <h2>Education</h2>
+
+  <ul class="entry-list">
+
+    <li class="entry-item">
+      <div class="entry-date">Sep 2021 – Present</div>
+      <div class="entry-org">University of Ottawa — Canada</div>
+      <div class="entry-role">PhD in Economics</div>
+      <div class="entry-detail">Advisors: Myra Yazbeck (supervisor) &amp; Louis-Philippe Béland (co-supervisor)</div>
+      <div class="entry-detail">Maternity leave: May 2024 – Dec 2024</div>
+    </li>
+
+    <li class="entry-item">
+      <div class="entry-date">Sep 2018 – Sep 2019</div>
+      <div class="entry-org">University of Warwick — United Kingdom</div>
+      <div class="entry-role">MSc in Economics</div>
+      <div class="entry-detail">Supervisor: Manuel Bagues</div>
+      <span class="entry-badge">Graduated with Distinction</span>
+      <span class="entry-badge" style="margin-left:0.4rem;">Top 8% in Econometrics</span>
+    </li>
+
+    <li class="entry-item">
+      <div class="entry-date">Sep 2014 – Sep 2017</div>
+      <div class="entry-org">American University of Beirut — Lebanon</div>
+      <div class="entry-role">B.A. in Economics</div>
+      <span class="entry-badge">Dean's Honors Student</span>
+    </li>
+
+  </ul>
+</section>
+
+<hr class="divider" style="max-width:820px; margin: 0 auto;">
+
+<!-- CV -->
+<section id="cv">
+  <p class="section-label">Curriculum Vitae</p>
+  <h2>CV</h2>
+  <p style="color: var(--ink-light); font-size: 1rem; margin-bottom: 1.5rem;">
+    Download a PDF version of my full curriculum vitae.
+  </p>
+  <a href="#" class="cv-btn">Download CV (PDF)</a>
+  <p style="margin-top:1rem; font-size:0.82rem; color:var(--ink-faint);">Link coming soon — upload your PDF to GitHub and replace the # with the filename.</p>
+</section>
+
+<hr class="divider" style="max-width:820px; margin: 0 auto;">
 
 <!-- CONTACT -->
 <section id="contact">
   <p class="section-label">Contact</p>
   <h2>Get in touch</h2>
-  <p class="contact-line">
-    I welcome inquiries about my research and potential collaborations.
-  </p>
-  <p class="contact-line">
-    <strong>Email:</strong> <a href="mailto:Azaya096@uottawa.ca">Azaya096@uottawa.ca</a>
-  </p>
-  <p class="contact-line">
-    University of Ottawa · Department of Economics
-  </p>
+  <p class="contact-line">I welcome inquiries about my research and potential collaborations.</p>
+  <p class="contact-line"><strong>Email:</strong> <a href="mailto:Azaya096@uottawa.ca">Azaya096@uottawa.ca</a></p>
+  <p class="contact-line"><strong>ORCID:</strong> <a href="https://orcid.org/0009-0007-3319-4971" target="_blank" rel="noopener">0009-0007-3319-4971</a></p>
+  <p class="contact-line">University of Ottawa · Department of Economics</p>
 </section>
 
 <footer>
